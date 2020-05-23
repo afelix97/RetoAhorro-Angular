@@ -1,80 +1,91 @@
-<div class="row justify-content-center">
-    <div class="col-xs-12 col-md-12 col-lg-10 col-xl-7">
-        <br>
-        <div id="contenedorCard" class="card box-sombra">
-            <div class="card-header">
-                <img width="30%" class="logoafore" src="../../assets/aforecoppel-imgs/logoaforenvo.gif" alt="Logo" width="250" />
-                <h1 class="text-center">Reto del Ahorro Afore Coppel</h1>
-                <p class="text-center">Compártenos tus datos para que formes parte del reto</p>
-            </div>
-            <div class="card-body">
-                <div id="Mensaje"></div>
-                <div class="form-group row">
-                    <label for="txtNombre" class="col-sm-5 col-form-label text-md-right">Nombre *</label>
-                    <div class="col-sm-7">
-                        <input id="txtNombre" [(ngModel)]="datosForm.nombre" type="text" class="form-control" placeholder="Ingresar nombre" autocomplete="off" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false"
-                            onDrop="return false">
-                    </div>
+<div id="contenedor1" class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-12 col-lg-10 col-xl-6">
+            <br>
+            <div id="contenedorCard" class="card box-sombra">
+                <div class="card-header">
+                    <img width="30%" class="logoafore" src="../../assets/aforecoppel-imgs/logoaforenvo.gif" alt="Logo">
+                    <h1 class="text-center">Reto del Ahorro Afore Coppel</h1>
+                    <p class="text-center">Compártenos tus datos para que formes parte del reto</p>
                 </div>
-                <div class="form-group row">
-                    <label for="txtEdad" class="col-sm-5 col-form-label text-md-right">Edad *</label>
-                    <div class="col-sm-7">
-                        <input id="txtEdad" [(ngModel)]="datosForm.edad" type="text" class="form-control" placeholder="Ingresar edad" autocomplete="off" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false"
-                            maxlength="2">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label id="etiqFormaCalcular" class="col-sm-5 col-form-label text-md-right">Reto de mi preferencia</label>
-                    <div class="col-sm-7">
-                        <select id="cboFormaCalcular" [(ngModel)]="datosForm.retoDeMiPreferencia" aria-labelledby="etiqFormaCalcular leyenda" class="form-control" autocomplete="off">
-                          <option id="1" value="1">Monto a Ahorrar al Año</option>
-                            <option id="2" value="2">Ahorro Fijo Semanal</option>
-                            <option id="3" value="3">Ahorro Fijo Mensual</option>
-                            <option id="4" value="4">Ahorro Incremental Semanal</option>
-                      </select>
-                        <label id="leyenda" class="col-sm-12 col-form-label text-md-right"><em>Establecer el reto para calcular</em></label>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="txtMontoAhorrarAnio" class="col-sm-5 col-form-label text-md-right">Monto a Ahorrar al Año</label>
-                    <div class="col-sm-7">
-                        <input id="txtMontoAhorrarAnio" type="text" [disabled]="datosForm.retoDeMiPreferencia == 1 ? false: true" [(ngModel)]="datosForm.montoAhorrarAlAnio" class="form-control" [placeholder]="datosForm.retoDeMiPreferencia == 1 ? 'Ingresa cantidad' : ''" [value]="datosForm.retoDeMiPreferencia != '1' ? '' : null"
-                            autocomplete="off" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" maxlength="30">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="txtMontoFijoSemanal" class="col-sm-5 col-form-label text-md-right">Ahorro Fijo Semanal</label>
-                    <div class="col-sm-7">
-                        <input id="txtMontoFijoSemanal" type="text" [disabled]="datosForm.retoDeMiPreferencia == 2 ? false: true" [(ngModel)]="datosForm.ahorroFijoSemanal" class="form-control" [placeholder]="datosForm.retoDeMiPreferencia == 2 ? 'Ingresa cantidad' : ''" [value]="datosForm.retoDeMiPreferencia != '2' ? '' : null"
-                            autocomplete="off" disabled="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" maxlength="26">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="txtMontoFijoMensual" class="col-sm-5 col-form-label text-md-right">Ahorro Fijo Mensual</label>
-                    <div class="col-sm-7">
-                        <input id="txtMontoFijoMensual" type="text" [disabled]="datosForm.retoDeMiPreferencia == 3 ? false: true" [(ngModel)]="datosForm.ahorroFijoMensual" class="form-control" [placeholder]="datosForm.retoDeMiPreferencia == 3 ? 'Ingresa cantidad' : ''" [value]="datosForm.retoDeMiPreferencia != '3' ? '' : null"
-                            autocomplete="off" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" maxlength="26">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="txtMontoIncremental" class="col-sm-5 col-form-label text-md-right">Ahorro Incremental Semanal</label>
-                    <div class="col-sm-7">
-                        <input id="txtMontoIncremental" type="text" [disabled]="datosForm.retoDeMiPreferencia == 4 ? false: true" [(ngModel)]="datosForm.ahorroIncrementalSemanal" class="form-control" [placeholder]="datosForm.retoDeMiPreferencia == 4 ? 'Ingresa cantidad' : ''"
-                            [value]="datosForm.retoDeMiPreferencia != '4' ? '' : null" autocomplete="off" disabled="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false"
-                            maxlength="23">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="float-right">
-                        <div class="text-center">
-                            <button id="btnCalcularAhorro" type="button" class="botonReto btn-reto mb-2">Calcular Ahorros</button>&nbsp;
-                            <button id="btnUnirseReto" type="button" class="botonReto btn-success mb-2" style="display: none;">Unirse al reto</button>
-                            <button id="btnNuevoCalculo" type="button" class="botonReto btn-reto mb-2" (click)="nuevoCalculo()">Nuevo Cálculo</button>
+                <div class="card-body">
+                    <div id="Mensaje"></div>
+                    <form [formGroup]="formRetoAhorro" (submit)="unirseReto(formRetoAhorro)">
+                        <div class="form-group row">
+                            <label for="txtNombre" class="col-sm-5 col-form-label text-md-right">Nombre *</label>
+                            <div class="col-sm-7">
+                                <input formControlName="txtNombre" id="txtNombre" type="text" class="form-control" placeholder="Ingresar nombre" autocomplete="off" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false"
+                                />
+                                <div class="alert alert-danger" *ngIf="formRetoAhorro.controls.txtNombre.errors">
+                                    No cumple con lo requerido
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-group row">
+                            <label for="txtEdad" class="col-sm-5 col-form-label text-md-right">Edad *</label>
+                            <div class="col-sm-7">
+                                <input formControlName="txtEdad" id="txtEdad" type="text" class="form-control" placeholder="Ingresar edad" autocomplete="off" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false"
+                                    maxlength="2" />
+                                <div class="alert alert-danger" *ngIf="formRetoAhorro.controls.txtEdad.errors">
+                                    No cumple con lo requerido
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label id="etiqFormaCalcular" class="col-sm-5 col-form-label text-md-right">Reto de mi preferencia</label>
+                            <div class="col-sm-7">
+                                <select formControlName="cboFormaCalcular" id="cboFormaCalcular" aria-labelledby="etiqFormaCalcular leyenda" class="form-control" autocomplete="off">
+                                    <option id="1" value="1">Monto a Ahorrar al Año</option>
+                                    <option id="2" value="2">Ahorro Fijo Semanal</option>
+                                    <option id="3" value="3">Ahorro Fijo Mensual</option>
+                                    <option id="4" value="4">Ahorro Incremental Semanal</option>
+                                </select>
+                                <div class="alert alert-danger" *ngIf="formRetoAhorro.controls.cboFormaCalcular.errors">
+                                    No cumple con lo requerido
+                                </div>
+                                <label id="leyenda" class="col-sm-12 col-form-label text-md-right"><em>Establecer el reto para calcular</em></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="txtMontoAhorrarAnio" class="col-sm-5 col-form-label text-md-right">Monto a Ahorrar al Año</label>
+                            <div class="col-sm-7">
+                                <input formControlName="txtMontoAhorrarAnio" id="txtMontoAhorrarAnio" type="text" value="" class="form-control" placeholder="Ingresa cantidad" autocomplete="off" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false"
+                                    onDrag="return false" onDrop="return false" maxlength="30" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txtMontoFijoSemanal" class="col-sm-5 col-form-label text-md-right">Ahorro Fijo Semanal</label>
+                            <div class="col-sm-7">
+                                <input formControlName="txtMontoFijoSemanal" id="txtMontoFijoSemanal" type="text" value="" class="form-control" placeholder="" autocomplete="off" disabled="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false"
+                                    onDrag="return false" onDrop="return false" maxlength="26" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txtMontoFijoMensual" class="col-sm-5 col-form-label text-md-right">Ahorro Fijo Mensual</label>
+                            <div class="col-sm-7">
+                                <input formControlName="txtMontoFijoMensual" id="txtMontoFijoMensual" type="text" value="" class="form-control" placeholder="" autocomplete="off" disabled="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false"
+                                    onDrag="return false" onDrop="return false" maxlength="26" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txtMontoIncremental" class="col-sm-5 col-form-label text-md-right">Ahorro Incremental Semanal</label>
+                            <div class="col-sm-7">
+                                <input formControlName="txtMontoIncremental" id="txtMontoIncremental" type="text" value="" class="form-control" placeholder="" autocomplete="off" disabled="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false"
+                                    onDrag="return false" onDrop="return false" maxlength="23" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="float-right">
+                                <button id="btnCalcularAhorro" type="button" class="botonReto btn-reto mb-2" (click)="calcularAhorro()">Calcular Ahorros</button>&nbsp;
+                                <button id="btnUnirseReto" type="submit" class="botonReto btn-success mb-2" style="display: none;">Unirse al reto</button>
+                                <button id="btnNuevoCalculo" type="button" class="botonReto btn-reto mb-2" (click)="nuevoCalculo()">Nuevo Cálculo</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<br>
